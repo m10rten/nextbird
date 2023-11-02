@@ -7,6 +7,7 @@
  */
 
 import { NextRequest } from "next/server";
+
 import { NEXTBIRD_VERSION } from "./consts";
 
 /**
