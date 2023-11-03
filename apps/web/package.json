@@ -11,8 +11,6 @@
     "ui:add": "shadcn-ui add"
   },
   "dependencies": {
-    "@commitlint/cli": "18.2.0",
-    "@commitlint/config-conventional": "18.1.0",
     "@ianvs/prettier-plugin-sort-imports": "4.1.1",
     "@radix-ui/react-dialog": "1.0.5",
     "@radix-ui/react-popover": "1.0.7",
