@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Footer from "#/footer";
 import Header from "#/header";
 import Pattern from "#/pattern";
 import { Button } from "#/ui/button";
@@ -60,6 +61,7 @@ export default function Home() {
         </section>
       </main>
       <Pattern />
+      <Footer />
     </>
   );
 }

@@ -1,8 +1,12 @@
+import Footer from "#/footer";
 import Header from "#/header";
+import { Button } from "#/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "#/ui/sheet";
+import { Book, Menu } from "lucide-react";
 
 import { docsConfig } from "@/config/docs";
 
-import { DocsSidebarNav } from "./[[...slug]]/sidebar";
+import { DocsSidebarNav } from "./[[...slug]]/_components/sidebar";
 
 export const metadata = {
   title: "NextBird - Docs",
@@ -14,14 +18,25 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
   return (
     <>
       <Header />
-      <main className="flex flex-col items-center justify-between relative flex-1 md:grid md:grid-cols-[220px_1fr] md:gap-6 lg:grid-cols-[240px_1fr] lg:gap-10">
-        <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 overflow-y-auto border-r py-6 pr-2 md:sticky md:block lg:py-10">
+      <main className="flex flex-col flex-1 items-center justify-between relative sm:grid sm:grid-cols-[180px_1fr]">
+        <aside className="fixed top-14 z-30 hidden h-full min-h-fit w-full shrink-0 overflow-y-auto border-r sm:px-1 py-6 sm:sticky sm:block">
           <DocsSidebarNav items={docsConfig.sidebar.items} />
         </aside>
         {/* <Menu /> */}
         {/* Move DocsSidebarNav to Menu for user control on mobile */}
+        <Sheet>
+          <SheetTrigger className="absolute sm:hidden bottom-4 right-4 z-50">
+            <Button variant="outline" className="p-2">
+              <Menu size={24} />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="sm:hidden">
+            <DocsSidebarNav items={docsConfig.sidebar.items} />
+          </SheetContent>
+        </Sheet>
         {children}
       </main>
+      <Footer />
     </>
   );
 }

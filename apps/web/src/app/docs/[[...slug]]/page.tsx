@@ -27,7 +27,7 @@ export default async function DocsPage({ params }: { params: { slug: string[] } 
   }
 
   return (
-    <article className="mx-auto max-w-xl py-8">
+    <article className="mx-auto max-w-xl py-8 container sm:max-w-full sm:px-2">
       <div className="mb-8 text-center">
         <h1 className="text-3xl font-bold">{doc.title}</h1>
       </div>
@@ -36,5 +36,11 @@ export default async function DocsPage({ params }: { params: { slug: string[] } 
         dangerouslySetInnerHTML={{ __html: doc.body.html }}
       />
     </article>
+
+    // <>
+    //   <DocsPageHeader heading={doc.title} text={doc.description} />
+    //   <Mdx code={doc.body.code} />
+    //   <hr className="my-4 md:my-6" />
+    // </>
   );
 }
