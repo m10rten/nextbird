@@ -1,0 +1,27 @@
+---
+global_id: ab8d3f
+title: Getting Started
+sidebar_label: Getting Started
+excerpt: Get started with NextBird
+nav_title: Getting Started
+description: Get started with NextBird
+---
+
+## Installation
+
+```bash
+npm install nextbird
+```
+
+## Usage
+
+In your routes files, you can use the `nextbird` function to create a route handler.
+
+This must be done directly in the following route file: `app/api/health/[bird]/route.{ts,js}`.
+
+This file then should look something like this:
+
+```ts
+// app/api/health/[bird]/route.ts
+import { nextbird } from "nextbird"; // Import the nextbird function
+```
