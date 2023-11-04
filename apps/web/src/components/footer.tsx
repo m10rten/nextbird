@@ -11,9 +11,9 @@ export default function Footer() {
           <div className="flex gap-1">
             Build by
             <Link
-              href="https://twitter.com/mvdlei"
+              href="https://twitter.com/mrvdlei"
               className="flex w-fit justify-center items-center gap-1">
-              <span className="hover:underline transition-all font-bold">@mvdlei</span>
+              <span className="hover:underline transition-all font-bold">@mrvdlei</span>
               <Twitter size={16} />.
             </Link>
           </div>

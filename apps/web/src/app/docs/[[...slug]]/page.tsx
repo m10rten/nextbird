@@ -32,7 +32,7 @@ export default async function DocsPage({ params }: { params: { slug: string[] } 
         <h1 className="text-3xl font-bold">{doc.title}</h1>
       </div>
       <div
-        className="[&>*:last-child]:mb-0 [&>*]:mb-3 markdown"
+        className="[&>*:last-child]:mb-0 [&>*]:mb-3 markdown max-w-full overflow-y-auto"
         dangerouslySetInnerHTML={{ __html: doc.body.html }}
       />
     </article>

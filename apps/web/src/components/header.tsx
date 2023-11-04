@@ -11,11 +11,6 @@ export default function Header() {
           <h1 className="font-mono text-xl font-bold">NextBird</h1>
         </Link>
         <div className="flex items-center sm:gap-5 gap-3 group sm:px-3 px-1">
-          <Button asChild variant={"outline"} className="px-3 sm:px-4">
-            <Link href={"https://github.com/m10rten/nextbird"}>
-              <Github size={24} />
-            </Link>
-          </Button>
           <Link href="/docs" className="hover:underline transition-all">
             Docs
           </Link>
