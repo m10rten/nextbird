@@ -1,3 +1,6 @@
+// for next.js server side components, server actions and api routes.
+"use server";
+
 /**
  * This is the file responsible for the server-side route handling
  * it should always be mounted on `/api/health/[bird]/route.ts` to ensure proper functionality
@@ -5,7 +8,6 @@
  * @module nextbird/server
  * @preferred
  */
-
 import { NextRequest } from "next/server";
 
 import { NEXTBIRD_VERSION } from "./consts";
