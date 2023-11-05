@@ -1,7 +1,14 @@
 import { NextRequest } from "next/server";
 import nextbird from "nextbird";
 
-const AvailableRoutes = ["ping", "health", "info", "version"] as const;
+// ping: quick check if the server is alive
+// health: check if the server is healthy
+// info: get the server information
+// version: get the server version and version of nextbird
+// live: get a quick live update of requests, memory usage, logs etc, done in a stream.
+// exposed: get the exposed routes and ports of the server
+// public: get possible public settings such as PORTS, hosts, environment, etc.
+const AvailableRoutes = ["ping", "health", "info", "version", "live"] as const;
 
 const ping = async (req: NextRequest) => {
   // check if the server is alive
