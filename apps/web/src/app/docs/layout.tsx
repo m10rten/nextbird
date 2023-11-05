@@ -25,7 +25,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
         {/* <Menu /> */}
         {/* Move DocsSidebarNav to Menu for user control on mobile */}
         <Sheet>
-          <SheetTrigger className="absolute sm:hidden bottom-4 right-4 z-50">
+          <SheetTrigger asChild className="absolute sm:hidden bottom-4 right-4 z-50">
             <Button variant="outline" className="p-2">
               <Menu size={24} />
             </Button>

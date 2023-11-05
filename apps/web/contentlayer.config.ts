@@ -3,7 +3,8 @@ import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
-import remarkGfm from "remark-gfm";
+
+// import remarkGfm from "remark-gfm";
 
 const computedFields = {
   slug: {
@@ -15,9 +16,11 @@ const computedFields = {
     resolve: (doc: DocType) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
   },
 } as const;
+
 export const Doc = defineDocumentType(() => ({
   name: "Doc",
-  filePathPattern: "**/*.{mdx,md}",
+  filePathPattern: "**/*.mdx",
+  contentType: "mdx",
   fields: {
     global_id: {
       type: "string",
@@ -34,30 +37,10 @@ export const Doc = defineDocumentType(() => ({
       required: false,
       description: "The title of the page for this Doc in the navigation",
     },
-    sidebar_label: {
-      type: "string",
-      required: false,
-      description: "The label shown in the sidebar for this Doc",
-    },
     description: {
       type: "string",
       required: false,
       description: "The description of the page for this Doc",
-    },
-    collapsible: {
-      type: "boolean",
-      required: false,
-      description: "Whether the Doc page should be collapsible",
-    },
-    collapsed: {
-      type: "boolean",
-      required: false,
-      description: "Whether the Doc page should be collapsed by default",
-    },
-    excerpt: {
-      type: "string",
-      required: true,
-      description: "The excerpt of the Doc page",
     },
 
     tags: {
@@ -75,7 +58,7 @@ export default makeSource({
   contentDirPath: "./content",
   documentTypes: [Doc],
   mdx: {
-    remarkPlugins: [remarkGfm],
+    // remarkPlugins: [remarkGfm],
     rehypePlugins: [
       rehypeSlug,
       [
