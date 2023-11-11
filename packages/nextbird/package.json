@@ -47,5 +47,8 @@
   },
   "peerDependencies": {
     "next": "^13.5"
+  },
+  "dependencies": {
+    "zod": "3.22.4"
   }
 }

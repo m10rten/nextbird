@@ -3,9 +3,9 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { cn } from "~/utils";
 
 import { NavLinks, SidebarItem } from "@/config/docs";
+import { cn } from "~/utils";
 
 export interface DocsSidebarNavProps {
   items: SidebarItem[];
