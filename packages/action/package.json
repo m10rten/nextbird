@@ -1,6 +1,6 @@
 {
   "name": "@nextbird/action",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "NextBird is a simple, lightweight and fast library for creating a status page for your services.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
