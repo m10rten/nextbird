@@ -1,7 +1,8 @@
 import Link from "next/link";
+import { Github } from "lucide-react";
+
 import ThemeSwitch from "#/theme-switch";
 import { Button } from "#/ui/button";
-import { Github } from "lucide-react";
 
 export default function Header() {
   return (

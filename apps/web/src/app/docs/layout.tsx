@@ -1,10 +1,10 @@
+import { Book, Menu } from "lucide-react";
+
+import { docsConfig } from "@/config/docs";
 import Footer from "#/footer";
 import Header from "#/header";
 import { Button } from "#/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "#/ui/sheet";
-import { Book, Menu } from "lucide-react";
-
-import { docsConfig } from "@/config/docs";
 
 import { DocsSidebarNav } from "./[[...slug]]/_components/sidebar";
 
