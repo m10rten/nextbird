@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/nextjs.json",
+  "extends": "@nextbird/config/nextjs.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

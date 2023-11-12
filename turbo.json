@@ -18,6 +18,10 @@
       "cache": true,
       "persistent": true
     },
+    "test:coverage": {
+      "cache": true,
+      "persistent": true
+    },
     "typecheck": {
       "cache": true,
       "persistent": true
