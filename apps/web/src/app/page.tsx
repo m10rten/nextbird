@@ -36,7 +36,7 @@ export default function Home() {
         </div>
         <section className="flex flex-col items-center justify-between mt-16">
           <h2 className="sm:text-5xl text-4xl font-sans font-extrabold">Features</h2>
-          <div className="flex flex-col sm:flex-row gap-4 mt-6">
+          <div className="flex flex-col md:flex-row gap-4 mt-6">
             <FeatureCard
               title="Uptime monitoring"
               description="Get notified when your application is down. We will send you an email when your application is down and when it's up again."
