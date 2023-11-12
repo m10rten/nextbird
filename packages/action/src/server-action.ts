@@ -3,10 +3,12 @@ import { fromZodError } from "zod-validation-error";
 
 export type ActionType<I extends z.ZodTypeAny, R> = (input: z.infer<I>) => Promise<R>;
 
-export type ZactAction<I extends z.ZodTypeAny, R> = ActionType<I, R>;
+export type Action<I extends z.ZodTypeAny, R> = ActionType<I, R>;
 
 /**
  * Use this function to create an action with a zod schema to make sure your input is valid.
+ *
+ * When using, please make sure to set the `"use server"` at the top of the file to make sure the server is used.
  *
  * Takes generic I: InputType, R: ReturnType
  * @example
@@ -21,7 +23,7 @@ export type ZactAction<I extends z.ZodTypeAny, R> = ActionType<I, R>;
  */
 export function serverAction<I extends z.ZodTypeAny>(validator?: I) {
   // This is the "factory" that is created on call of zact. You pass it a "use server" function and it will validate the input before you call it
-  return function <R>(action: ActionType<I, R>): ZactAction<I, R> {
+  return function <R>(action: ActionType<I, R>): Action<I, R> {
     // The wrapper that actually validates
     const validatedAction = async (input: z.infer<I>) => {
       if (validator) {
@@ -36,6 +38,6 @@ export function serverAction<I extends z.ZodTypeAny>(validator?: I) {
       return await action(input);
     };
 
-    return validatedAction satisfies ZactAction<I, R>;
+    return validatedAction satisfies Action<I, R>;
   };
 }

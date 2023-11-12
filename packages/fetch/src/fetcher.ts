@@ -25,11 +25,7 @@ export type ZodFetcher<TFetcher extends AnyFetcher> = <TData>(
  * The default fetcher used by createFetcher when no
  * fetcher is provided.
  */
-export const defaultFetcher = async (...args: Parameters<typeof fetch>) => {
-  // add no-cache header to args if not already
-  if (!args.includes({ cache: "no-cache" })) {
-    args.push({ cache: "no-cache" });
-  }
+export const defaultFetcher: AnyFetcher = async (...args: Parameters<typeof fetch>) => {
   const response = await fetch(...args);
 
   if (!response.ok) {

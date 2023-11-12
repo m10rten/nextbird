@@ -9,7 +9,7 @@ import { createFetcher } from "./fetcher";
  * api(z.object({ status: z.boolean() }), `${API_URL}/{path}`, { method: "POST" });
  * ```
  *
- * see the next example, that expects an object with status: string response.
+ * see the next example, that expects an object with a string property called `world`: that returns a string.
  * ```ts
  * api(z.object({ world: z.string() }), `${API_URL}/hello`);
  * ```

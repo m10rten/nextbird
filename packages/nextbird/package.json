@@ -40,12 +40,28 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
+    },
+    "./react": {
+      "import": "./dist/react.mjs",
+      "require": "./dist/react.js",
+      "types": "./dist/react.d.ts"
+    },
+    "./client": {
+      "import": "./dist/client.mjs",
+      "require": "./dist/client.js",
+      "types": "./dist/client.d.ts"
+    },
+    "./server": {
+      "import": "./dist/server.mjs",
+      "require": "./dist/server.js",
+      "types": "./dist/server.d.ts"
     }
   },
   "devDependencies": {
     "next": "14.0.1",
     "@nextbird/action": "0.0.1",
-    "@nextbird/fetch": "0.0.1"
+    "@nextbird/fetch": "0.0.1",
+    "@types/node": " 20.9.0"
   },
   "peerDependencies": {
     "next": "^13.5",
@@ -53,6 +69,6 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "zod": "3.22.4"
+    "zod": "^3.22.4"
   }
 }
