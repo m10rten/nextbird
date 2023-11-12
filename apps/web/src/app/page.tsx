@@ -53,12 +53,14 @@ export default function Home() {
         </section>
 
         <section className="mt-16">
-          <h2 className="sm:text-5xl text-4xl font-sans font-extrabold">Powered By</h2>
-        </section>
-        <section className="mt-16">
           <h2 className="sm:text-5xl text-4xl font-sans font-extrabold">
             Free & Open Source
           </h2>
+          <p className="text-secondary-foreground/70 mt-1 px-1">
+            NextBird is free and open source. You can find the source code on GitHub.
+            <br /> You can self-host NextBird to get started. Or you can use our hosted
+            solution. (Coming soon)
+          </p>
         </section>
       </main>
       <Pattern />

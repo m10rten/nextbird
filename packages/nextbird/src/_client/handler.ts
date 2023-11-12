@@ -1,15 +1,19 @@
 import { api } from "@nextbird/fetch";
 
-import { dataSchema } from "@/schemas";
-import { Config } from "@/types";
+import { eventSchema } from "@/schemas";
+import { HandlerConfig } from "@/types";
 
 /**
  * Either returns a health object or throws an error
  * Uses http in development and test environments such as localhost
  *
  * Uses https in production environments unless http is set to true
+ *
+ * Throws error if:
+ * - host is missing
+ * - API does not return valid data
  */
-export async function handler(config?: Config) {
+export async function handler(config?: HandlerConfig) {
   const host = config?.host;
   if (!host) throw new Error("Missing host in config");
   if (host.includes("http://") || host.includes("https://"))
@@ -26,6 +30,6 @@ export async function handler(config?: Config) {
     // eslint-disable-next-line no-console
     console.warn("You are using http, this is not recommended, please use https");
   const url = `${http ? "http" : "https"}://${host}/${path}`;
-  const res = await api(dataSchema, url);
+  const res = await api(eventSchema, url);
   return res;
 }

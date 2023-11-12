@@ -17,8 +17,8 @@ export default function Background() {
             <defs>
               <pattern
                 id="dotted-pattern"
-                width="24"
-                height="24"
+                width="22"
+                height="22"
                 patternUnits="userSpaceOnUse">
                 <circle cx="2" cy="2" r="1" fill="black" />
               </pattern>
