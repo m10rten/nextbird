@@ -12,7 +12,7 @@ import { handler } from "./handler";
  * export {GET: route().GET };
  * ```
  */
-export default function route(config?: HandlerConfig) {
+export function route(config?: HandlerConfig) {
   return {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     GET: async (_req?: Request) => {

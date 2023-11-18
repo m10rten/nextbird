@@ -1,5 +1,3 @@
-import { serverAction } from "@nextbird/action";
-
 import { handler } from "@/_client/handler";
 import { HandlerConfig } from "@/types";
 
@@ -30,8 +28,8 @@ import { HandlerConfig } from "@/types";
  * ```
  *
  */
-export default async function action(config?: HandlerConfig) {
-  return serverAction()(async () => {
+export async function action(config?: HandlerConfig) {
+  return async () => {
     try {
       const res = await handler(config);
       if (config?.onSuccess) return config.onSuccess(res);
@@ -40,5 +38,5 @@ export default async function action(config?: HandlerConfig) {
       if (config?.onError) return config.onError(error);
       throw error;
     }
-  });
+  };
 }

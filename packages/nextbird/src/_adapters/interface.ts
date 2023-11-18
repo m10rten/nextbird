@@ -1,7 +1,7 @@
 import type { Day, Event, Overview, SystemInfo } from "@/types";
 
 type OverviewEventData = Pick<Event, "id" | "created_at" | "status" | "duration">;
-type CreateEvent = Omit<Event, "id">;
+type CreateEvent = Omit<Event, "id" | "created_at">;
 type OverviewDayData = Pick<Day, "date" | "average_duration" | "failed" | "note"> & {
   count: number;
 };
@@ -36,7 +36,7 @@ export interface IAdapter {
   /**
    * Returns all top-level data from the last 14 days.
    */
-  last_14_days: () => Promise<OverviewEventData[]>;
+  last_14_days: () => Promise<OverviewDayData[]>;
   /**
    * Gets the uptime percentage from the last 14 days.
    * @returns {Promise<number>} The uptime percentage.

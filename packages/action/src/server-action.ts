@@ -1,9 +1,7 @@
 import type z from "zod";
 import { fromZodError } from "zod-validation-error";
 
-export type ActionType<I extends z.ZodTypeAny, R> = (input: z.infer<I>) => Promise<R>;
-
-export type Action<I extends z.ZodTypeAny, R> = ActionType<I, R>;
+export type Action<I extends z.ZodTypeAny, R> = (input?: z.infer<I>) => Promise<R>;
 
 /**
  * Use this function to create an action with a zod schema to make sure your input is valid.
@@ -23,7 +21,7 @@ export type Action<I extends z.ZodTypeAny, R> = ActionType<I, R>;
  */
 export function serverAction<I extends z.ZodTypeAny>(validator?: I) {
   // This is the "factory" that is created on call of zact. You pass it a "use server" function and it will validate the input before you call it
-  return function <R>(action: ActionType<I, R>): Action<I, R> {
+  return function <R>(action: Action<I, R>): Action<I, R> {
     // The wrapper that actually validates
     const validatedAction = async (input: z.infer<I>) => {
       if (validator) {

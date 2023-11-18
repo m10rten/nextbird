@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server";
-import nextbird from "nextbird";
+
+// import nextbird from "nextbird";
 
 // ping: quick check if the server is alive
 // health: check if the server is healthy

@@ -1,0 +1,12 @@
+{
+  "extends": "@nextbird/config/base.json",
+  "compilerOptions": {
+    "lib": ["ES2022", "dom", "dom.iterable"],
+    "baseUrl": "./",
+    "jsx": "react",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "resolveJsonModule": true
+  }
+}

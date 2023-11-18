@@ -1,0 +1,64 @@
+{
+  "name": "@nextbird/react",
+  "version": "0.0.0",
+  "description": "NextBird is a simple, lightweight and fast library for creating a status page for your services.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.mjs",
+  "scripts": {
+    "build": "tsup --format cjs,esm --dts",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --ci --passWithNoTests"
+  },
+  "keywords": [
+    "status",
+    "healthcheck",
+    "statuspage",
+    "Nextjs",
+    "Next",
+    "React",
+    "Node",
+    "Typescript",
+    "Typesafe",
+    "uptime",
+    "monitoring"
+  ],
+  "author": "m10rten",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "devDependencies": {
+    "@types/react": "18.2.37",
+    "@types/react-dom": "18.2.15",
+    "clsx": "2.0.0",
+    "tailwind-merge": "2.0.0"
+  },
+  "peerDependencies": {
+    "clsx": "2.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwind-merge": "2.0.0"
+  },
+  "dependencies": {
+    "@nextbird/action": "0.0.1",
+    "class-variance-authority": "0.7.0",
+    "nextbird": "0.0.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
+}
